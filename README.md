@@ -119,7 +119,7 @@ def clone_or_update_repo(repo: dict, base_dir: Path, use_ssh: bool = False):
     - base_dir: directory where repositories are stored.
     - use_ssh: if True, use ssh_url; otherwise use clone_url (HTTPS).
     """
-    full_name = repo["full_name"]   # e.g. "R0mb0/my-repo"
+    full_name = repo["full_name"]   # e.g. "<user>/my-repo"
     name = repo["name"]             # e.g. "my-repo"
     ssh_url = repo["ssh_url"]
     clone_url = repo["clone_url"]
@@ -254,7 +254,7 @@ echo "$REAL_PATH"
 ```
 
 Suppose:
-- directory: `/media/R0mb0/GitBackup/github-backups`
+- directory: `/media/<user>/GitBackup/github-backups`
 - python: `/usr/bin/python3`
 
 3. Edit the user’s crontab:
@@ -266,7 +266,7 @@ crontab -e
 Add a line, for example to run it every day at 03:00:
 
 ```cron
-0 3 * * * cd /media/R0mb0/GitBackup/github-backups && /usr/bin/python3 github_backup.py >> github_backup_cron.log 2>&1
+0 3 * * * cd /media/<user>/GitBackup/github-backups && /usr/bin/python3 github_backup.py >> github_backup_cron.log 2>&1
 ```
 
 - `cd ...` → enters the folder on the USB drive;
@@ -300,6 +300,6 @@ to
 use_ssh = True
 ```
 
-This way it will use the repo’s `ssh_url` (like `git@github.com:R0mb0/repo.git`).
+This way it will use the repo’s `ssh_url` (like `git@github.com:<user>/repo.git`).
 
 ---
