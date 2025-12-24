@@ -1,4 +1,4 @@
-# Github repo backup sync
+# Github repo backup sync 💾🔁
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ebdd02c1030445a68be75fdefaaf7a8a)](https://app.codacy.com/gh/R0mb0/Github_repo_backup_sync/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/R0mb0/Github_repo_backup_sync)
@@ -6,17 +6,19 @@
 [![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit)
 [![Donate](https://img.shields.io/badge/PayPal-Donate%20to%20Author-blue.svg)](http://paypal.me/R0mb0)
 
-Simple Python script that uses GitHub CLI to clone and keep all your GitHub repositories (public and private) up to date in a local folder, e.g. on an external drive. Ideal for personal backups: new repos are cloned automatically and existing ones are regularly synced.
+Simple Python script that uses GitHub CLI to clone and keep all your GitHub repositories (public and private) up to date in a local folder, e.g. on an external drive. Ideal for personal backups: new repos are cloned automatically and existing ones are regularly synced. ✅
 
-## Script guide
+---
 
-### 1. Python script: `github_backup.py`
+## Script guide 📚
+
+### 1. Python script: `github_backup.py` 🐍
 
 This script:
 
-- uses `gh api` via `subprocess` (so it reuses the login you already did);
-- uses HTTPS (with the token managed by `gh`); if you prefer SSH, will be a variant later;
-- writes a `github_backup.log` log file in the current directory (i.e. where you run the script).
+- 🧾 uses `gh api` via `subprocess` (so it reuses the login you already did);
+- 🌐 uses HTTPS (with the token managed by `gh`); if you prefer SSH, there will be a variant later;
+- 📝 writes a `github_backup.log` log file in the current directory (i.e. where you run the script).
 
 ```python name=github_backup.py
 #!/usr/bin/env python3
@@ -180,14 +182,14 @@ if __name__ == "__main__":
 
 ---
 
-### 2. Installing dependencies
+### 2. Installing dependencies ⚙️
 
 ```bash
-# Make sure you have Python3 and git
+# ✅ Make sure you have Python3 and git
 sudo apt update
 sudo apt install -y python3 python3-venv git
 
-# Make sure you have gh (GitHub CLI) installed
+# ✅ Make sure you have gh (GitHub CLI) installed
 # If you don't have it yet:
 type -p gh >/dev/null || (
   type -p curl >/dev/null || sudo apt install curl -y
@@ -200,37 +202,37 @@ https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/
   sudo apt install gh -y
 )
 
-# Log in to GitHub CLI (if you haven’t already)
+# 🔐 Log in to GitHub CLI (if you haven’t already)
 gh auth login
 ```
 
 ---
 
-### 3. If you want use this script with an external USB HDD
+### 3. If you want use this script with an external USB HDD 💿
 
-1. **Connect the USB drive** and mount it (it’s usually mounted under `/media/your_user/DISK_NAME`).
-2. Open a terminal and go to the folder on the drive where you want to keep the backups, for example:
+1. 🔌 **Connect the USB drive** and mount it (it’s usually mounted under `/media/your_user/DISK_NAME`).
+2. 📂 Open a terminal and go to the folder on the drive where you want to keep the backups, for example:
 
 ```bash
 cd /media/$USER/MY_DISK/github-backups
 ```
 
-3. Copy the script into the `github-backups` folder (or wherever you prefer):
+3. 📁 Copy the script into the `github-backups` folder (or wherever you prefer):
 
 ```bash
 cp /path/where/you/saved/github_backup.py .
 chmod +x github_backup.py
 ```
 
-4. Run it manually for the first time:
+4. ▶️ Run it manually for the first time:
 
 ```bash
 ./github_backup.py
 ```
 
 - The script will:
-  - create/update the `github_backup.log` file in the same folder;
-  - for each repo it will create a subfolder with the repo’s name and perform clone/pull.
+  - 📝 create/update the `github_backup.log` file in the same folder;
+  - 📁 for each repo it will create a subfolder with the repo’s name and perform clone/pull.
 
 You can open the log with:
 
@@ -240,12 +242,12 @@ less github_backup.log
 
 ---
 
-### 4. Running it automatically once a day
+### 4. Running it automatically once a day ⏰
 
-#### 4.1. With `cron` (simpler)
+#### 4.1. With `cron` (simpler) 🕒
 
-1. Make sure the USB drive is **always connected and mounted** when the job runs.
-2. Find the absolute path:
+1. 🔁 Make sure the USB drive is **always connected and mounted** when the job runs.
+2. 🔎 Find the absolute path:
 
 ```bash
 REAL_PATH="/media/$USER/MY_DISK/github-backups"
@@ -254,10 +256,10 @@ echo "$REAL_PATH"
 ```
 
 Suppose:
-- directory: `/media/<user>/GitBackup/github-backups`
-- python: `/usr/bin/python3`
+- 📂 directory: `/media/<user>/GitBackup/github-backups`
+- 🐍 python: `/usr/bin/python3`
 
-3. Edit the user’s crontab:
+3. 📝 Edit the user’s crontab:
 
 ```bash
 crontab -e
@@ -270,16 +272,16 @@ Add a line, for example to run it every day at 03:00:
 ```
 
 - `cd ...` → enters the folder on the USB drive;
-- runs the script;
-- also writes a `github_backup_cron.log` file with the cron output (in addition to the internally managed `github_backup.log`).
+- ▶️ runs the script;
+- 🧾 also writes a `github_backup_cron.log` file with the cron output (in addition to the internally managed `github_backup.log`).
 
 ---
 
-### 5. Variant to use SSH instead of HTTPS (optional)
+### 5. Variant to use SSH instead of HTTPS (optional) 🔐
 
 If you prefer to use SSH keys:
 
-1. Make sure the key is configured:
+1. 🔑 Make sure the key is configured:
 
 ```bash
 ssh-keygen -t ed25519 -C "your-email"
@@ -288,7 +290,7 @@ ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub
 ```
 
-2. In the code, change:
+2. 🛠 In the code, change:
 
 ```python
 use_ssh = False
