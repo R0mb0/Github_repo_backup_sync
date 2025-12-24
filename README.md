@@ -1,5 +1,11 @@
 # Github repo backup sync
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ebdd02c1030445a68be75fdefaaf7a8a)](https://app.codacy.com/gh/R0mb0/Github_repo_backup_sync/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/R0mb0/Github_repo_backup_sync)
+[![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/R0mb0/Github_repo_backup_sync)
+[![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit)
+[![Donate](https://img.shields.io/badge/PayPal-Donate%20to%20Author-blue.svg)](http://paypal.me/R0mb0)
+
 Simple Python script that uses GitHub CLI to clone and keep all your GitHub repositories (public and private) up to date in a local folder, e.g. on an external drive. Ideal for personal backups: new repos are cloned automatically and existing ones are regularly synced.
 
 ## Script guide
