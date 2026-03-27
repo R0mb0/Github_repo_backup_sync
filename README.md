@@ -1,6 +1,7 @@
 # Github repo backup sync 💾🔁
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ebdd02c1030445a68be75fdefaaf7a8a)](https://app.codacy.com/gh/R0mb0/Github_repo_backup_sync/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/R0mb0/Github_repo_backup_sync)
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/R0mb0/Github_repo_backup_sync)
 [![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit)
