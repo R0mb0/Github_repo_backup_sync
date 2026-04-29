@@ -9,6 +9,17 @@
 
 Simple Python script that uses GitHub CLI to clone and keep all your GitHub repositories (public and private) up to date in a local folder, e.g. on an external drive. Ideal for personal backups: new repos are cloned automatically and existing ones are regularly synced. ✅
 
+<div align="center">
+  <a href="http://paypal.me/R0mb0">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/R0mb0/Support_the_dev_badge/blob/main/Badge/SVG/Support_the_dev_badge_Dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://github.com/R0mb0/Support_the_dev_badge/blob/main/Badge/SVG/Support_the_dev_badge_Light.svg">
+      <img alt="Saved you time? Support the dev" src="https://github.com/R0mb0/Support_the_dev_badge/blob/main/Badge/SVG/Support_the_dev_badge_Default.svg">
+    </picture>
+  </a>
+</div>
+
+
 ---
 
 ## Script guide 📚
